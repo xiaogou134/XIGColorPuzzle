@@ -10,7 +10,7 @@ import UIKit
 import RxDataSources
 
 class ColorModel {
-    let line: Int
+    let column: Int
     let row: Int
     
     let minXMinYColor: ColorStruct = ColorStruct()
@@ -23,21 +23,21 @@ class ColorModel {
         
         var stepArray: [Int] = [Int]()
         
-        var beginLineColor = minXMinYColor.divideColorStruct(minXMaxYColor, many: line)
-        var endLineColor = maxXMinYColor.divideColorStruct(maxXMaxYColor, many: line)
+        var beginLineColor = minXMinYColor.divideColorStruct(minXMaxYColor, many: row)
+        var endLineColor = maxXMinYColor.divideColorStruct(maxXMaxYColor, many: row)
         
         var temp =  [ColorStruct]()
-        for i in 0 ..< line {
-            temp += beginLineColor[i].divideColorStruct(endLineColor[i], many: row)
+        for i in 0 ..< row {
+            temp += beginLineColor[i].divideColorStruct(endLineColor[i], many: column)
         }
         array.append(SectionOfColorData(items:
                         temp.map{ ColorData(color: $0.transToUIColor()) }))
         return array
     }()
     
-    init(row: Int, line: Int) {
+    init(row: Int, column: Int) {
         self.row = row
-        self.line = line
+        self.column = column
     }
 }
 

@@ -18,6 +18,7 @@
 		DA7243E1267A293200CEC2FF /* ColorfulCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7243E0267A293200CEC2FF /* ColorfulCollectionViewCell.swift */; };
 		DA8BBCEE26819787008D592E /* extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8BBCED26819786008D592E /* extension.swift */; };
 		DA8BBCF0268197AF008D592E /* ColorStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8BBCEF268197AF008D592E /* ColorStruct.swift */; };
+		DA8BBCF426835887008D592E /* ColorfulCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8BBCF326835886008D592E /* ColorfulCollectionViewLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		DA7243E0267A293200CEC2FF /* ColorfulCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorfulCollectionViewCell.swift; sourceTree = "<group>"; };
 		DA8BBCED26819786008D592E /* extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extension.swift; sourceTree = "<group>"; };
 		DA8BBCEF268197AF008D592E /* ColorStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorStruct.swift; sourceTree = "<group>"; };
+		DA8BBCF326835886008D592E /* ColorfulCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorfulCollectionViewLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 				DA8BBCEF268197AF008D592E /* ColorStruct.swift */,
 				DA8BBCED26819786008D592E /* extension.swift */,
 				DA7243E0267A293200CEC2FF /* ColorfulCollectionViewCell.swift */,
+				DA8BBCF326835886008D592E /* ColorfulCollectionViewLayout.swift */,
 				DA7243CE267A199E00CEC2FF /* Main.storyboard */,
 				DA7243D1267A19A100CEC2FF /* Assets.xcassets */,
 				DA7243D3267A19A100CEC2FF /* LaunchScreen.storyboard */,
@@ -217,6 +220,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA8BBCF426835887008D592E /* ColorfulCollectionViewLayout.swift in Sources */,
 				DA8BBCF0268197AF008D592E /* ColorStruct.swift in Sources */,
 				DA7243CD267A199E00CEC2FF /* ViewController.swift in Sources */,
 				DA7243E1267A293200CEC2FF /* ColorfulCollectionViewCell.swift in Sources */,
