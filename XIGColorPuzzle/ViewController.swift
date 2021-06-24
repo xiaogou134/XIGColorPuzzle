@@ -43,6 +43,7 @@ class ViewController: UIViewController {
                 (source, collection, indexPath, item) -> UICollectionViewCell in
                 let cell = collection.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ColorfulCollectionViewCell
                 cell.backgroundColor = item.color
+                cell.cellStatus = item.freeze ? .freeze : .normal
                 return cell
         }
     }
@@ -59,31 +60,26 @@ class ViewController: UIViewController {
         colorCollectionView.allowsSelection = true
         view.addSubview(colorCollectionView)
         colorCollectionView.snp.makeConstraints { (make) in
-            make.edges.equalTo(view.safeAreaLayoutGuide)
+            make.edges.equalToSuperview()
         }
 
-        let model = ColorModel(row: row, column: column)
-        Observable.just(model.colorArray).bind(to: colorCollectionView.rx.items(dataSource: dataSource)).disposed(by: disposeBag)
-        
-        dataSource.canMoveItemAtIndexPath = { dataSource, indexPath in
-            return true
-        }
-        
-        
+        let model = ColorLocation(row: row, column: column).colorData
+        Observable.just([SectionOfColorData(items: model)]).bind(to: colorCollectionView.rx.items(dataSource: dataSource)).disposed(by: disposeBag)
         
         colorCollectionView.rx.itemSelected.map{[weak self] newIndexPath -> IndexPath? in
             guard let self = self else { return nil}
+            let cell = self.colorCollectionView.cellForItem(at: newIndexPath ) as! ColorfulCollectionViewCell
+            if cell.cellStatus == .freeze {
+                return nil
+            }
             guard let oldIndexPath = self.selectedRelay.value else {
-                let cell = self.colorCollectionView.cellForItem(at: newIndexPath ) as! ColorfulCollectionViewCell
                 cell.cellStatus = .selected
                 return newIndexPath
             }
             if newIndexPath == oldIndexPath {
-                let cell = self.colorCollectionView.cellForItem(at: newIndexPath ) as! ColorfulCollectionViewCell
                 cell.cellStatus = .normal
             } else {
-                let newCell = self.colorCollectionView.cellForItem(at: newIndexPath ) as! ColorfulCollectionViewCell
-                newCell.cellStatus = .normal
+                cell.cellStatus = .normal
                 let oldCell = self.colorCollectionView.cellForItem(at: oldIndexPath ) as! ColorfulCollectionViewCell
                 oldCell.cellStatus = .normal
                 self.colorCollectionView.performBatchUpdates {

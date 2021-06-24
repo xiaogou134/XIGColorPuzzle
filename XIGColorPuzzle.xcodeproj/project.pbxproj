@@ -19,6 +19,7 @@
 		DA8BBCEE26819787008D592E /* extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8BBCED26819786008D592E /* extension.swift */; };
 		DA8BBCF0268197AF008D592E /* ColorStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8BBCEF268197AF008D592E /* ColorStruct.swift */; };
 		DA8BBCF426835887008D592E /* ColorfulCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8BBCF326835886008D592E /* ColorfulCollectionViewLayout.swift */; };
+		DA8BBCF6268366B8008D592E /* ColorLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8BBCF5268366B8008D592E /* ColorLocation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		DA8BBCED26819786008D592E /* extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extension.swift; sourceTree = "<group>"; };
 		DA8BBCEF268197AF008D592E /* ColorStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorStruct.swift; sourceTree = "<group>"; };
 		DA8BBCF326835886008D592E /* ColorfulCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorfulCollectionViewLayout.swift; sourceTree = "<group>"; };
+		DA8BBCF5268366B8008D592E /* ColorLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorLocation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 				DA7243C8267A199E00CEC2FF /* AppDelegate.swift */,
 				DA7243CA267A199E00CEC2FF /* SceneDelegate.swift */,
 				DA7243CC267A199E00CEC2FF /* ViewController.swift */,
+				DA8BBCF5268366B8008D592E /* ColorLocation.swift */,
 				DA7243DE267A209E00CEC2FF /* ColorModel.swift */,
 				DA8BBCEF268197AF008D592E /* ColorStruct.swift */,
 				DA8BBCED26819786008D592E /* extension.swift */,
@@ -227,6 +230,7 @@
 				DA7243C9267A199E00CEC2FF /* AppDelegate.swift in Sources */,
 				DA8BBCEE26819787008D592E /* extension.swift in Sources */,
 				DA7243CB267A199E00CEC2FF /* SceneDelegate.swift in Sources */,
+				DA8BBCF6268366B8008D592E /* ColorLocation.swift in Sources */,
 				DA7243DF267A209E00CEC2FF /* ColorModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

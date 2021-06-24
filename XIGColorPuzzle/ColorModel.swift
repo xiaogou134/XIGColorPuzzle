@@ -5,7 +5,6 @@
 //  Created by xiaogou134 on 2021/6/16.
 //
 
-import Foundation
 import UIKit
 import RxDataSources
 
@@ -18,8 +17,8 @@ class ColorModel {
     let maxXMinYColor: ColorStruct = ColorStruct()
     let maxXMaxYColor: ColorStruct = ColorStruct()
     
-    lazy var colorArray: [SectionOfColorData] = {
-        var array = [SectionOfColorData]()
+    lazy var colorArray: [UIColor] = {
+        var array = [UIColor]()
         
         var stepArray: [Int] = [Int]()
         
@@ -30,8 +29,7 @@ class ColorModel {
         for i in 0 ..< row {
             temp += beginLineColor[i].divideColorStruct(endLineColor[i], many: column)
         }
-        array.append(SectionOfColorData(items:
-                        temp.map{ ColorData(color: $0.transToUIColor()) }))
+        array += temp.map{ $0.transToUIColor() }
         return array
     }()
     
@@ -41,35 +39,3 @@ class ColorModel {
     }
 }
 
-struct ColorData: IdentifiableType, Equatable {
-    typealias Identity = String
-    
-    var identity: String {
-        return "\(color)"
-    }
-
-    var color: UIColor
-    
-    static func == (lhs: ColorData, rhs: ColorData) -> Bool {
-        return lhs.color == rhs.color
-    }
-}
-
-struct SectionOfColorData {
-    var items: [Item]
-}
-
-extension SectionOfColorData: AnimatableSectionModelType {
-    var identity: String {
-        return "\(items)"
-    }
-    
-    typealias Identity = String
-    
-    typealias Item = ColorData
-    
-    init(original: SectionOfColorData, items: [Item]) {
-        self = original
-        self.items = items
-    }
-}

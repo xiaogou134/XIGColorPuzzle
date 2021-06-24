@@ -34,7 +34,7 @@ class ColorfulCollectionViewCell: UICollectionViewCell {
         self.cellStatus = .normal
         super.init(frame: .zero)
         
-        
+        statusImageView.contentMode = .scaleAspectFill
         addSubview(statusImageView)
         statusImageView.tintColor = .black
         statusImageView.snp.makeConstraints { make in
