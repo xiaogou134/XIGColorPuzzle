@@ -30,8 +30,11 @@ class ColorfulCollectionViewCell: UICollectionViewCell {
     
     let statusImageView: UIImageView = UIImageView()
     
+    var originLoc: IndexPath
+    
     override init(frame: CGRect) {
         self.cellStatus = .normal
+        self.originLoc = IndexPath()
         super.init(frame: .zero)
         
         statusImageView.contentMode = .scaleAspectFill

@@ -13,13 +13,17 @@ extension UIColor {
     }
 }
 
-extension Array{
+extension Array where Element == ColorData{
     mutating func randomArray() {
         var list = self
         for index in 0..<list.count {
-            let newIndex = Int(arc4random_uniform(UInt32(list.count-index))) + index
-            if index != newIndex {
-                list.swapAt(index, newIndex)
+            if list[index].freeze == true{
+                continue
+            } else {
+                let newIndex = Int(arc4random_uniform(UInt32(list.count-index))) + index
+                if index != newIndex && list[newIndex].freeze == false{
+                    list.swapAt(index, newIndex)
+                }
             }
         }
         self = list

@@ -18,12 +18,12 @@ class ColorfulCollectionViewLayout: UICollectionViewFlowLayout{
     override func prepare() {
         super.prepare()
         
-        guard let collectionView = collectionView else { return }
+        guard let collection = collectionView, collection.numberOfSections > 0 else { return }
         
         cachedAttributes.removeAll()
-        contentBounds = CGRect(origin: .zero, size: collectionView.bounds.size)
+        contentBounds = CGRect(origin: .zero, size: collection.bounds.size)
         
-        for item in 0 ..< collectionView.numberOfItems(inSection: 0)  {
+        for item in 0 ..< collection.numberOfItems(inSection: 0)  {
             if let attr = layoutAttributesForItem(at: IndexPath(item: item, section: 0)) {
                 cachedAttributes.append(attr)
             }
